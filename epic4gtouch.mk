@@ -101,7 +101,7 @@ PRODUCT_LOCALES := hdpi
 
 # kernel modules for ramdisk
 RAMDISK_MODULES = $(addprefix device/samsung/epic4gtouch/,bthid.ko dhd.ko gspca_main.ko j4fs.ko \
-	scsi_wait_scan.ko Si4709_driver.ko vibrator.ko)
+	scsi_wait_scan.ko vibrator.ko cyasswitch.ko)
 PRODUCT_COPY_FILES += $(foreach module,\
 	$(RAMDISK_MODULES),\
 	$(module):root/lib/modules/$(notdir $(module)))
