@@ -35,7 +35,7 @@
 # but not to the original vendor tree. Be sure to update both.
 
 # include common makefile for c1 platform
-$(call inherit-product-if-exists, device/samsung/epic4gtouch/common.mk)
+$(call inherit-product-if-exists, device/samsung/epic4gtouch/c1/common.mk)
 
 # apns config file
 PRODUCT_COPY_FILES += \

@@ -1,0 +1,3 @@
+# Samsung messed up at naming their board. 
+# The real board name for the galaxy s II line is smdkv310, smdkc210 was the original (first) galaxy s line of phones.
+# We've fixed it by creating init.smdkv310.rc, but we use this placeholder so that Rom Manager still recognizes our device correctly.
