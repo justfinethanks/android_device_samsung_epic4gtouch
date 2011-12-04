@@ -16,11 +16,12 @@ on init
     mkdir /datadata
     mkdir /emmc
     mkdir /system
+    mkdir /system2
     mkdir /data
     mkdir /cache
     mkdir /efs
-
     mount /tmp /tmp tmpfs
+    mkdir /persist
 
     mkdir /mnt 0775 root root
 
@@ -41,8 +42,8 @@ on fs
     chown radio system /efs
     chmod 0771 /efs
 
-    # verfiy filesystem (UMS)
-    exec apply_system_policy /dev/block/mmcblk0p11 vfat
+	# verfiy filesystem (UMS)
+	exec apply_system_policy /dev/block/mmcblk0p11 vfat
 
 on post-fs
     write /proc/sys/kernel/panic_on_oops 1
