@@ -14,8 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE=epic4gtouch
-COMMON=c1-common
+DEVICE=galaxys2spr
+COMMON=c1-spr
 MANUFACTURER=samsung
 
 mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
@@ -27,11 +27,12 @@ mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/firmware
 mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw
 mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/keychars
 mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/wifi
+mkdir -p ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging
 
-# galaxys2
+# galaxys2spr
 
 
-# c1-common
+# c1-spr
 adb pull /system/lib/libActionShot.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libActionShot.so
 adb pull /system/lib/libakm.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libakm.so
 adb pull /system/lib/libarccamera.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libarccamera.so
@@ -56,7 +57,7 @@ adb pull /system/lib/libsecjpegarcsoft.so ../../../vendor/$MANUFACTURER/$COMMON/
 adb pull /system/lib/libsecjpegboard.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsecjpegboard.so
 adb pull /system/lib/libsecjpeginterface.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsecjpeginterface.so
 adb pull /system/lib/libsecril-client.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsecril-client.so
-adb pull /system/lib/libsec-ril.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsec-ril.so
+adb pull /system/lib/libsec-ril40.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libsec-ril40.so
 adb pull /system/lib/libtvoutcec.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libtvoutcec.so
 adb pull /system/lib/libtvoutddc.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libtvoutddc.so
 adb pull /system/lib/libtvoutedid.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libtvoutedid.so
@@ -67,10 +68,10 @@ adb pull /system/lib/libtvouthdmi.so ../../../vendor/$MANUFACTURER/$COMMON/propr
 adb pull /system/lib/libtvout_jni.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libtvout_jni.so
 adb pull /system/lib/libtvoutservice.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libtvoutservice.so
 adb pull /system/lib/libtvout.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libtvout.so
-adb pull /system/bin/BCM4330B1_002.001.003.0128.0162.hcd ../../../vendor/$MANUFACTURER/$COMMON/proprietary/BCM4330B1_002.001.003.0128.0162.hcd
+adb pull /system/bin/BCM4330B1_002.001.003.0221.0262.hcd ../../../vendor/$MANUFACTURER/$COMMON/proprietary/BCM4330B1_002.001.003.0221.0262.hcd
 adb pull /system/bin/rild ../../../vendor/$MANUFACTURER/$COMMON/proprietary/rild
 adb pull /system/bin/tvoutserver ../../../vendor/$MANUFACTURER/$COMMON/proprietary/tvoutserver
-adb pull /system/cameradata/datapattern_420sp.yuv ../../../vendor/$MANUFACTURER/$COMMON/proprietary/cameradata/datapattern_420sp.yuv
+adb pull /system/cameradata/datapattern_front_420sp.yuv ../../../vendor/$MANUFACTURER/$COMMON/proprietary/cameradata/datapattern_front_420sp.yuv
 adb pull /system/cameradata/datapattern_front_420sp.yuv ../../../vendor/$MANUFACTURER/$COMMON/proprietary/cameradata/datapattern_front_420sp.yuv
 adb pull /system/lib/egl/libEGL_mali.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/egl/libEGL_mali.so
 adb pull /system/lib/egl/libGLES_android.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/egl/libGLES_android.so
@@ -78,23 +79,23 @@ adb pull /system/lib/egl/libGLESv1_CM_mali.so ../../../vendor/$MANUFACTURER/$COM
 adb pull /system/lib/egl/libGLESv2_mali.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/egl/libGLESv2_mali.so
 adb pull /system/etc/firmware/qt602240.fw ../../../vendor/$MANUFACTURER/$COMMON/proprietary/firmware/qt602240.fw
 adb pull /system/etc/firmware/RS_M5LS_OB.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/firmware/RS_M5LS_OB.bin
-adb pull /system/etc/firmware/RS_M5LS_OC.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/firmware/RS_M5LS_OC.bin
+adb pull /system/etc/firmware/RS_M5LS_OE.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/firmware/RS_M5LS_OE.bin
 adb pull /system/etc/firmware/RS_M5LS_TB.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/firmware/RS_M5LS_TB.bin
 adb pull /system/vendor/firmware/mfc_fw.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/firmware/mfc_fw.bin
 adb pull /system/lib/hw/acoustics.default.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/acoustics.default.so
 adb pull /system/lib/hw/alsa.default.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/alsa.default.so
-adb pull /system/lib/hw/copybit.smdkv310.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/copybit.GT-I9100.so
-adb pull /system/lib/hw/vendor-gps.smdkv310.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/gps.GT-I9100.so
+adb pull /system/lib/hw/copybit.SPH-D710.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/copybit.SPH-D710.so
+adb pull /system/lib/hw/vendor-gps.smdkv310.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/gps.SPH-D710.so
 adb pull /system/lib/hw/gralloc.default.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/gralloc.default.so
-adb pull /system/lib/hw/gralloc.smdkv310.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/gralloc.GT-I9100.so
+adb pull /system/lib/hw/gralloc.SPH-D710.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hw/gralloc.SPH-D710.so
 adb pull /system/usr/keychars/Broadcom_Bluetooth_HID.kcm.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/keychars/Broadcom_Bluetooth_HID.kcm.bin
 adb pull /system/usr/keychars/qwerty2.kcm.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/keychars/qwerty2.kcm.bin
 adb pull /system/usr/keychars/qwerty.kcm.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/keychars/qwerty.kcm.bin
 adb pull /system/usr/keychars/sec_key.kcm.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/keychars/sec_key.kcm.bin
 adb pull /system/usr/keychars/sec_touchkey.kcm.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/keychars/sec_touchkey.kcm.bin
-adb pull /system/vendor/firmware/bcm4330_aps.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/wifi/bcm4330_aps.bin
-adb pull /system/vendor/firmware/bcm4330_mfg.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/wifi/bcm4330_mfg.bin
-adb pull /system/vendor/firmware/bcm4330_sta.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/wifi/bcm4330_sta.bin
+adb pull /system/etc/wifi/bcm4330_aps.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/wifi/bcm4330_aps.bin
+adb pull /system/etc/wifi/bcm4330_mfg.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/wifi/bcm4330_mfg.bin
+adb pull /system/etc/wifi/bcm4330_sta.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/wifi/bcm4330_sta.bin
 adb pull /system/bin/alsa_amixer ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/alsa_amixer
 adb pull /system/bin/alsa_aplay ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/alsa_aplay
 adb pull /system/bin/alsa_ctl ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/alsa_ctl
@@ -119,6 +120,34 @@ adb pull /system/lib/libsoundalive.so ../../../vendor/$MANUFACTURER/$COMMON/prop
 adb pull /system/lib/libsoundpool.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libsoundpool.so
 adb pull /system/lib/libSR_AudioIn.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libSR_AudioIn.so
 adb pull /system/lib/libyamahasrc.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/audio/libyamahasrc.so
+adb pull /system/bin/charging_mode ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/charging_mode
+adb pull /system/bin/playlpm ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/playlpm
+adb pull /system/lib/libQmageDecoder.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/libQmageDecoder.so
+adb pull /system/media/battery_batteryerror.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_batteryerror.qmg
+adb pull /system/media/battery_charging_5.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_5.qmg
+adb pull /system/media/battery_charging_10.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_10.qmg
+adb pull /system/media/battery_charging_15.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_15.qmg
+adb pull /system/media/battery_charging_20.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_20.qmg
+adb pull /system/media/battery_charging_25.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_25.qmg
+adb pull /system/media/battery_charging_30.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_30.qmg
+adb pull /system/media/battery_charging_35.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_35.qmg
+adb pull /system/media/battery_charging_40.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_40.qmg
+adb pull /system/media/battery_charging_45.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_45.qmg
+adb pull /system/media/battery_charging_50.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_50.qmg
+adb pull /system/media/battery_charging_55.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_55.qmg
+adb pull /system/media/battery_charging_60.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_60.qmg
+adb pull /system/media/battery_charging_65.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_65.qmg
+adb pull /system/media/battery_charging_70.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_70.qmg
+adb pull /system/media/battery_charging_75.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_75.qmg
+adb pull /system/media/battery_charging_80.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_80.qmg
+adb pull /system/media/battery_charging_85.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_85.qmg
+adb pull /system/media/battery_charging_90.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_90.qmg
+adb pull /system/media/battery_charging_95.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_95.qmg
+adb pull /system/media/battery_charging_100.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_charging_100.qmg
+adb pull /system/media/battery_error.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/battery_error.qmg
+adb pull /system/media/chargingwarning.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/chargingwarning.qmg
+adb pull /system/media/Disconnected.qmg ../../../vendor/$MANUFACTURER/$COMMON/proprietary/offmode_charging/Disconnected.qmg
+
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__MANUFACTURER__/$MANUFACTURER/g > ../../../vendor/$MANUFACTURER/$DEVICE/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2010 The Android Open Source Project
@@ -138,7 +167,7 @@ adb pull /system/lib/libyamahasrc.so ../../../vendor/$MANUFACTURER/$COMMON/propr
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES := \\
 
-# All the blobs necessary for galaxys2 devices
+# All the blobs necessary for galaxys2spr devices
 PRODUCT_COPY_FILES += \\
 
 EOF
@@ -168,7 +197,7 @@ PRODUCT_COPY_FILES := \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libmediayamahaservice.so:obj/lib/libmediayamahaservice.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libaudiopolicy.so:obj/lib/libaudiopolicy.so
 
-# All the blobs necessary for galaxys2 devices
+# All the blobs necessary for galaxys2spr devices
 PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libActionShot.so:system/lib/libActionShot.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libakm.so:system/lib/libakm.so \\
@@ -194,7 +223,7 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libsecjpegboard.so:system/lib/libsecjpegboard.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libsecjpeginterface.so:system/lib/libsecjpeginterface.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libsecril-client.so:system/lib/libsecril-client.so \\
-    vendor/__MANUFACTURER__/__COMMON__/proprietary/libsec-ril.so:system/lib/libsec-ril.so \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/libsec-ril40.so:system/lib/libsec-ril40.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libtvoutcec.so:system/lib/libtvoutcec.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libtvoutddc.so:system/lib/libtvoutddc.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libtvoutedid.so:system/lib/libtvoutedid.so \\
@@ -207,12 +236,12 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libtvout.so:system/lib/libtvout.so
 
 PRODUCT_COPY_FILES += \\
-    vendor/__MANUFACTURER__/__COMMON__/proprietary/BCM4330B1_002.001.003.0128.0162.hcd:system/bin/BCM4330B1_002.001.003.0128.0162.hcd \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/BCM4330B1_002.001.003.0221.0262.hcd:system/bin/BCM4330B1_002.001.003.0221.0262.hcd \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/rild:system/bin/rild \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/tvoutserver:system/bin/tvoutserver
 
 PRODUCT_COPY_FILES += \\
-    vendor/__MANUFACTURER__/__COMMON__/proprietary/cameradata/datapattern_420sp.yuv:system/cameradata/datapattern_420sp.yuv \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/cameradata/datapattern_front_420sp.yuv:system/cameradata/datapattern_front_420sp.yuv \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/cameradata/datapattern_front_420sp.yuv:system/cameradata/datapattern_front_420sp.yuv
 
 PRODUCT_COPY_FILES += \\
@@ -224,17 +253,17 @@ PRODUCT_COPY_FILES += \\
 PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/firmware/qt602240.fw:system/etc/firmware/qt602240.fw \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/firmware/RS_M5LS_OB.bin:system/etc/firmware/RS_M5LS_OB.bin \\
-    vendor/__MANUFACTURER__/__COMMON__/proprietary/firmware/RS_M5LS_OC.bin:system/etc/firmware/RS_M5LS_OC.bin \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/firmware/RS_M5LS_OE.bin:system/etc/firmware/RS_M5LS_OE.bin \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/firmware/RS_M5LS_TB.bin:system/etc/firmware/RS_M5LS_TB.bin \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/firmware/mfc_fw.bin:system/vendor/firmware/mfc_fw.bin
 
 PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/acoustics.default.so:system/lib/hw/acoustics.default.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/alsa.default.so:system/lib/hw/alsa.default.so \\
-    vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/copybit.GT-I9100.so:system/lib/hw/copybit.smdkv310.so \\
-    vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/gps.GT-I9100.so:system/lib/hw/vendor-gps.smdkv310.so \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/copybit.SPH-D710.so:system/lib/hw/copybit.smdkv310.so \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/gps.SPH-D710.so:system/lib/hw/vendor-gps.smdkv310.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/gralloc.default.so:system/lib/hw/gralloc.default.so \\
-    vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/gralloc.GT-I9100.so:system/lib/hw/gralloc.smdkv310.so
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/hw/gralloc.SPH-D710.so:system/lib/hw/gralloc.smdkv310.so
 
 PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/keychars/Broadcom_Bluetooth_HID.kcm.bin:system/usr/keychars/Broadcom_Bluetooth_HID.kcm.bin \\
@@ -274,6 +303,36 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libsoundpool.so:system/lib/libsoundpool.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libSR_AudioIn.so:system/lib/libSR_AudioIn.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/audio/libyamahasrc.so:system/lib/libyamahasrc.so
+
+# offmode charging    
+PRODUCT_COPY_FILES += \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/charging_mode:system/bin/charging_mode \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/playlpm:system/bin/playlpm \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/libQmageDecoder.so:system/lib/libQmageDecoder.so \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_batteryerror.qmg:system/media/battery_batteryerror.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_5.qmg:system/media/battery_charging_5.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_10.qmg:system/media/battery_charging_10.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_15.qmg:system/media/battery_charging_15.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_20.qmg:system/media/battery_charging_20.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_25.qmg:system/media/battery_charging_25.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_30.qmg:system/media/battery_charging_30.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_35.qmg:system/media/battery_charging_35.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_40.qmg:system/media/battery_charging_40.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_45.qmg:system/media/battery_charging_45.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_50.qmg:system/media/battery_charging_50.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_55.qmg:system/media/battery_charging_55.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_60.qmg:system/media/battery_charging_60.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_65.qmg:system/media/battery_charging_65.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_70.qmg:system/media/battery_charging_70.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_75.qmg:system/media/battery_charging_75.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_80.qmg:system/media/battery_charging_80.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_85.qmg:system/media/battery_charging_85.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_90.qmg:system/media/battery_charging_90.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_95.qmg:system/media/battery_charging_95.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_charging_100.qmg:system/media/battery_charging_100.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/battery_error.qmg:system/media/battery_error.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/chargingwarning.qmg:system/media/chargingwarning.qmg \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/offmode_charging/Disconnected.qmg:system/media/Disconnected.qmg
 
 EOF
 
